@@ -1,0 +1,21 @@
+
+
+.container{
+
+position: relative;
+width: 100%;
+
+}
+
+
+.container img{
+
+width: 100%;
+display: block;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    
+}

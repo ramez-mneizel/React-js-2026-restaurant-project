@@ -1,25 +1,21 @@
-import react from "react" 
-import "./NavBar.css"
+import React from "react";
+import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
 
-function NavBar(){
-
-return (
-<>
-<nav className="nav"></nav>
-    <h2>pizza</h2>
-
-    <div className="link">
-   
-<a href="">Home</a>
-<a href="">Gallery</a>
-<a href="">Contact</a>
-<a href=""></a>
-    </div>
-
-
-</>
-);
-
-}
+const NavBar = () => {
+  return (
+    <AppBar position="static" sx={{ backgroundColor: "#333" }}>
+      <Container>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Pizza House
+          </Typography>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">Menu</Button>
+          <Button color="inherit">Contact</Button>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
 
 export default NavBar;
