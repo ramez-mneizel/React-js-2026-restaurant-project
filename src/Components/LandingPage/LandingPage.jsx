@@ -1,24 +1,18 @@
-import React from "react";
-import Navbar from "../Navbar/Navbar.jsx";
-import Hero from "../Hero/Hero.jsx";
-import About from "../About/About.jsx";
-import MenuCard from "../Menu/MenuCard.jsx";
-
+import Navbar from "../Components/Navbar/Navbar.jsx";
+import Hero from "../../Components/Hero/Hero.jsx";
+import About from "../../Components/About/About.jsx";
+import MenuList from "../../Components/Menu/MenuList.jsx";
 function LandingPage() {
   return (
     <>
+      <Navbar />
       <Hero />
       <About />
-      <MenuCard
-        name={"papparoni"}
-        description={" halal beef , salt , paprika,spicesand smoke flavoring."}
-      />
-      <MenuCard
-        name={"chicken pizza"}
-        description={" chicken , salt ,spices and potatos."}
-      />
+      <MenuList />
     </>
   );
 }
 
 export default LandingPage;
+
+//components render
