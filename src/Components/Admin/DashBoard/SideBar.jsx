@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../context/UserContext.jsx";
 import {
   Box,
   List,
@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-function Sidebar({ open, toggleSideBar }) {
+function SideBar({ open, toggleSideBar }) {
   const user = localStorage.getItem("currentrUsers");
   const role = user?.role;
   return (
@@ -75,4 +75,4 @@ function Sidebar({ open, toggleSideBar }) {
     </>
   );
 }
-export default Sidebar;
+export default SideBar;

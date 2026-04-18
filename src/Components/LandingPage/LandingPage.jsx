@@ -1,11 +1,11 @@
-import Navbar from "../Components/Navbar/Navbar.jsx";
-import Hero from "../../Components/Hero/Hero.jsx";
-import About from "../../Components/About/About.jsx";
-import MenuList from "../../Components/Menu/MenuList.jsx";
+import NavBar from "../Navbar/NavBar.jsx";
+import Hero from "../hero/Hero.jsx";
+import About from "../about/About.jsx";
+import MenuList from "../menu/MenuList.jsx";
 function LandingPage() {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <Hero />
       <About />
       <MenuList />

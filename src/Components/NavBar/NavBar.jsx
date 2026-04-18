@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Theme from "../../Theme/Theme.jsx";
-import { UserContext } from "../../Context/UserContext.jsx";
+import Theme from "../theme/Theme.jsx";
+import { UserContext } from "../../Components/context/UserContext.jsx";
 
 import {
   AppBar,
@@ -12,15 +12,15 @@ import {
   Container,
 } from "@mui/material";
 
-function Navbar() {
-  const { logout, user } = useContext(UserContext);
-  console.log(user);
+function NavBar() {
+  const { user } = useContext(UserContext);
+
   const role = user?.role;
   const currentrUsers = localStorage.getItem("currentrUsers");
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();
+    // logout();
     navigate("/");
   };
 
@@ -46,12 +46,13 @@ function Navbar() {
             variant="h5"
             sx={{
               fontWeight: "bold",
+              color: "#ff9900",
               cursor: "pointer",
               letterSpacing: 1,
             }}
             onClick={() => navigate("/")}
           >
-            🍕 Pizza
+            Jalabeno Burger
           </Typography>
 
           <Box
@@ -62,22 +63,44 @@ function Navbar() {
               color: "#000",
             }}
           >
-            <Button onClick={() => navigate("/")}>Home</Button>
+            <Button
+              onClick={() => navigate("/")}
+              sx={{ color: "#ff9100", fontWeight: "bold" }}
+            >
+              {" "}
+              Home
+            </Button>
 
-            <Button>Gallery</Button>
+            <Button
+              onClick={() => navigate("/")}
+              sx={{ color: "#ff9100", fontWeight: "bold" }}
+            >
+              Gallery
+            </Button>
 
-            <Button>Contact</Button>
+            <Button
+              onClick={() => navigate("/")}
+              sx={{ color: "#ff9900", fontWeight: "bold" }}
+            >
+              Contact
+            </Button>
 
             {role === "admin" ? (
               <Button
                 variant="contained"
                 color="secondary"
-                onClick={() => navigate("/admin/manage-menu")}
+                onClick={() => navigate("/")}
+                sx={{ color: "#ff9100", fontWeight: "bold" }}
               >
                 Manage Menu
               </Button>
             ) : (
-              <Button>Menu</Button>
+              <Button
+                onClick={() => navigate("/")}
+                sx={{ color: "#ff9100", fontWeight: "bold" }}
+              >
+                Menu
+              </Button>
             )}
 
             {currentrUsers ? (
@@ -92,11 +115,17 @@ function Navbar() {
               </Button>
             ) : (
               <>
-                <Button onClick={() => navigate("/register")}>Register</Button>
+                <Button
+                  onClick={() => navigate("/")}
+                  sx={{ color: "#ff9100", fontWeight: "bold" }}
+                >
+                  Register
+                </Button>
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => navigate("/login")}
+                  onClick={() => navigate("/")}
+                  sx={{ color: "#faf8f7", fontWeight: "bold" }}
                 >
                   Login
                 </Button>
@@ -111,4 +140,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;

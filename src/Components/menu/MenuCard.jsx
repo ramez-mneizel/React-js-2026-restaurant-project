@@ -16,12 +16,11 @@ function MenuCard({
   descriptioon,
   image,
   price,
-  quantity: initialQuantity,
+  
 }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
-  // 1. هون سر التاسك: عملنا State للكمية عشان تتغير لما نضغط
   const [count, setCount] = useState(initialQuantity || 1);
 
   const handleOpen = () => setOpen(true);
@@ -86,7 +85,7 @@ function MenuCard({
             >
               -
             </Button>
-            <strong>Quantity: {count}</strong>
+        
             <Button
               onClick={increase}
               variant="outlined"

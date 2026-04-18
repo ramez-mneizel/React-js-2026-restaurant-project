@@ -1,41 +1,37 @@
-import { useState, createContext, useContext } from "react";
-
+import { useState, createContext } from "react";
+// 1 === 2 ? "true" : flase
 export const CartContext = createContext();
-
-export const useCart = () => {
-  return useContext(CartContext);
-};
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-    
-    
-
   const addToCart = (item) => {
-    const exist = cart.find((existedItem) => existedItem.id === item.id);
-    console.log(item); 
-
-    if (exist) {
-    
-      setCart((prev) =>
-        prev.map((existed) =>
-          existed.id === item.id
-            ? { ...exist, quantity: exist.quantity + 1 }
-            : existed,
-        ),
-      );
-    } else {
-      
-      setCart((prev) => [...prev, item]);
-    }
+    setCart((prev) => {
+      const existed = prev.find((cartItem) => cartItem.id === item.id);
+      if (existed) {
+        return prev.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      } else {
+        return [...prev, { ...item, quantity: 1 }];
+      }
+    });
   };
+
+
+const removeFromItem = (itemId) => {
+  setCart((prev) => prev.filter((item) => item.id !== itemId));
+};
+
 
   return (
     <CartContext.Provider
       value={{
         cart,
         addToCart,
+        removeFromItem,
       }}
     >
       {children}
