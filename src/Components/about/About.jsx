@@ -1,4 +1,3 @@
-
 import "./About.css";
 import { Container, Typography } from "@mui/material";
 
@@ -7,16 +6,17 @@ function About() {
     <>
       <Container sx={{ py: 10 }}>
         <Typography variant="h2" align="center" fontWeight="bold" gutterBottom>
-          About our Medical Center
+          CHOOSE & CREATE Picante
         </Typography>
         <Typography variant="h6" align="center" color="text.secondary">
-          ​"Your health is our top priority. We are here to provide the care you
-          deserve, every step of the way."
+          Comes with 8 different demos. Get all of them with one-time purchase!
+          Use our 1-click install wizard to build the website in minutes.
+          Unlimited Possibilities with Codeless Combine parts from various
+          templates in your website!
         </Typography>
       </Container>
     </>
   );
 }
-
 
 export default About;

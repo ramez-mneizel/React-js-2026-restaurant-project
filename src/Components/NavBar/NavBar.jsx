@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Theme from "../theme/Theme.jsx";
-import { UserContext } from "../../Components/context/UserContext.jsx";
+import Theme from"../theme/Theme.jsx"
+import { UserContext } from"../context/UserContext.jsx";
 
 import {
   AppBar,

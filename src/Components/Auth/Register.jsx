@@ -7,7 +7,7 @@ import {
   Paper,
 } from "@mui/material";
 import { useState, useContext } from "react";
-import { UserContext } from "../../Context/UserContext.jsx";
+import { UserContext } from "../context/UserContext.jsx";
 
 function Register() {
   const [userData, setUserData] = useState({

@@ -7,11 +7,8 @@ function Theme() {
 
   const handleSwitchMode = () => {
     setTheme((current) => (current === "light" ? "dark" : "light"));
-    // if (theme==="light"){
-    //     theme="dark"
-    // }else{
-    //     theme="light"
-    // }
+    
+    
   };
   useEffect(() => {
     //cosntraint render
