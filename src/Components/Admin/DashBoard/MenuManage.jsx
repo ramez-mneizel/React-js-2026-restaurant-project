@@ -20,7 +20,7 @@ import Navbar from "../../Navbar/Navbar";
 import { MedicalServices } from "@mui/icons-material";
 
 function MenuManage() {
-  const [Services , setServices] = useState([
+  const [Services, setServices] = useState([
     {
       id: 1,
       name: "  استشارة عامة  ",
@@ -62,16 +62,12 @@ function MenuManage() {
     setOpen(!open);
   };
 
-    const handleSave = () => {
-        if (
-            !newItem.name ||
-            !newItem.description ||
-            !newItem.price 
-        ) {
-            toast.error("   يرجى تعبئة جميع بيانات الخدمة الطبية ");
-            return;
-        }
-        setServices([services, { newItem, id: services.length + 1, ...newItem }]);
+  const handleSave = () => {
+    if (!newItem.name || !newItem.description || !newItem.price) {
+      toast.error("   يرجى تعبئة جميع بيانات الخدمة الطبية ");
+      return;
+    }
+    setServices([services, { newItem, id: services.length + 1, ...newItem }]);
     toast.success("  تم اضافة القسم الطبي بنجاح ");
     setOpen(!open);
     setNewItem({});
@@ -134,7 +130,7 @@ function MenuManage() {
                     <TableCell>{service.name}</TableCell>
                     <TableCell>{service.description}</TableCell>
                     <TableCell>{service.price}</TableCell>
-                    
+
                     <TableCell align="center">
                       <Stack
                         direction="row"
